@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{getItem.Titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides pager="true" class="slide-full">
+    <ion-slide *ngFor="let item of getItem.UrlFotos" class="slide-content">
+     <img [src]="item" class="slide-img"/>
+    </ion-slide>
+  
+  </ion-slides>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Marca: {{getItem.Marca}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Modelo: {{getItem.Modelo}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>SKU: {{getItem.SKU}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label> Valor unitario: {{getItem.ValorUnt | number}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="resetItem()">Close</ion-button>
+
+</ion-content>
